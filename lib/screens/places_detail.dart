@@ -6,7 +6,7 @@ class PlaceDetailScreen extends StatelessWidget {
 
   final Place place;
 
-    String get locationImage {
+  String get locationImage {
     final lat = place.location.latitude;
     final lng = place.location.longitude;
     return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng=&zoom=16size=600x300&maptype=roadmap&markers=color:green%7Clabel:A%7C$lat,-$lng&key=AIzaSyBVW7Y5HXYq96UbHMAh_-ygZiAy-F86n6s';
@@ -33,14 +33,15 @@ class PlaceDetailScreen extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 70, backgroundImage: NetworkImage(locationImage),
+                  radius: 70,
+                  backgroundImage: NetworkImage(locationImage),
                 ),
                 Container(
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
                     vertical: 16,
-                  ),
+                  ),  
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
